@@ -9,3 +9,36 @@
 * Вывод получившегося массива на экран;
 * Необходимо сравнить, не превышает ли длина каждого элемента массива 3;
 * Элементы длина которых меньше или равна 3 вывести на экран.
+
+**3. Написать программу, решающую поставленную задачу**
+
+string[] Array() {
+    string[] array = new string[4];
+    
+    Console.WriteLine("Задайте элементы массива:");
+    for (int i=0; i < 4; i++){
+        Console.Write("array[{0}] = ", i);
+        array[i] = Console.ReadLine();
+    }        
+    return array;
+    
+}
+
+void ShowArray(string[] array){
+    string final = " ";
+    int j = 0;
+    Console.Write("[ ");
+    for(int i=0; i<array.Length; i++){
+        Console.Write(array[i] + " , ");
+        if (array[i].Length <= 3){
+            final = final + array[i] + ", ";
+            j++;
+        } 
+    }
+    Console.Write("]");
+    Console.Write(" => ");
+    Console.Write("[" + final + "]");
+    Console.WriteLine(" ");
+}
+
+ShowArray(Array());
